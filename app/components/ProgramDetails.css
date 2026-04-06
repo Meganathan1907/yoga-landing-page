@@ -1,0 +1,113 @@
+.program {
+    position: relative;
+    z-index: 1;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    width: 2px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 11px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    border: 4px solid var(--primary);
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-marker {
+    background: var(--primary);
+    box-shadow: 0 0 15px rgba(149, 132, 123, 0.3);
+    transform: scale(1.2);
+}
+
+.timeline-content {
+    padding: 2rem;
+    border-left: 3px solid transparent;
+    transition: var(--transition);
+}
+
+.timeline-item:hover .timeline-content {
+    border-left-color: var(--primary);
+    transform: translateX(10px);
+}
+
+.module-week {
+    display: inline-block;
+    color: var(--secondary);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.5rem;
+}
+
+.module-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.module-desc {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-marker {
+        left: 6px;
+        width: 16px;
+        height: 16px;
+        border-width: 3px;
+    }
+
+    .timeline-item {
+        padding-left: 45px;
+    }
+
+    .timeline-content {
+        padding: 1.5rem;
+    }
+
+    .timeline-item:hover .timeline-content {
+        transform: translateX(5px);
+    }
+
+    .module-title {
+        font-size: 1.25rem;
+    }
+}
